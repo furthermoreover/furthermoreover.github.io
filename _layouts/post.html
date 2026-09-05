@@ -12,3 +12,15 @@ layout: default
   {% if page.previous %}<a href="{{ page.previous.url | relative_url }}">← {{ page.previous.title }}</a>{% endif %}
   {% if page.next %}<a href="{{ page.next.url | relative_url }}">{{ page.next.title }} →</a>{% endif %}
 </nav>
+
+<!-- 评论区：utterances（基于 GitHub Issues） -->
+<section class="comments" style="margin-top:44px;padding-top:22px;border-top:1px solid #E7E7EC">
+  <h2 style="font-size:17px;margin-bottom:16px">评论</h2>
+  <script src="https://utteranc.es/client.js"
+          repo="furthermoreover/furthermoreover.github.io"
+          issue-term="pathname"
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+  </script>
+</section>
