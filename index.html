@@ -1,0 +1,20 @@
+---
+layout: default
+title: 首页
+---
+<section class="hero">
+  <h1>Hi，我是陈永斌 👋</h1>
+  <p>这里记录我的学习、技术与生活。</p>
+</section>
+
+<h2 class="list-title">最新文章</h2>
+{% for post in site.posts %}
+<article class="post-item">
+  <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+  <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+  <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
+</article>
+{% endfor %}
+{% if site.posts.size == 0 %}
+<p class="empty">还没有文章，第一篇即将到来。</p>
+{% endif %}
